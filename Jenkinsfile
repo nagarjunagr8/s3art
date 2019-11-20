@@ -24,7 +24,7 @@ pipeline {
             steps {
                 dir('deploy') {
                     withAWS(region: 'ap-south-1', credentials: 'aws-user') {
-                        s3Download bucket: 'prashanth-bucket1', file: 'cicd.war', force: 'true'
+                        s3Download bucket: 'prashanth-bucket1', file: '', force: 'true'
                     }
                 }
             }

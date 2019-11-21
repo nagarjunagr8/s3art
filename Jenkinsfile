@@ -12,6 +12,12 @@ pipeline {
             }
         }
 
+        stage('record test results') {
+            steps {
+                junit 'target/surefire-reports/*.xml'
+            }
+        }
+
         stage('upload to s3') {
             steps {
                 withAWS(region: 'ap-south-1', credentials: 'aws-user') {

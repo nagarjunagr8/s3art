@@ -10,4 +10,8 @@ public class HomePage {
     {
         return "the version is 1.3";
     }
+
+    public String version(String abc) {
+        return abc;
+    }
 }

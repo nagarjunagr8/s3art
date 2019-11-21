@@ -28,8 +28,26 @@
     <artifactId>servlet-api</artifactId>
     <version>3.0-alpha-1</version>
     </dependency>
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.12</version>
+          <scope>compile</scope>
+      </dependency>
   </dependencies>
   <build>
+      <testSourceDirectory>${project.basedir}/src/main/java/com/test</testSourceDirectory>
+      <plugins>
+      <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.21.0</version>
+          <configuration>
+              <includes>
+                  <include>com.test.HomePageTest</include>
+              </includes>
+          </configuration>
+      </plugin>
+      </plugins>
     <finalName>cicd</finalName>
   </build>
 </project>
